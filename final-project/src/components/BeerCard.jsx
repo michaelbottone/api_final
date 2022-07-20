@@ -15,9 +15,11 @@ const BeerCard = (props) => {
       <div className="flip-card-front">
       <img src={`${props.beer.image_url}`} height="120px" alt="beer-pic" />
       <h1>{props.beer.name}</h1>
+      <div className = "front-text">
           <h2>{props.beer.tagline}</h2>
           <h3>ABV: {props.beer.abv}</h3>
           <p className="desc"><em>{truncate(props.beer.description)}</em></p>
+          </div>
       </div>
       <div className="flip-card-back">
       <div className="bullets">
