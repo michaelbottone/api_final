@@ -1,11 +1,15 @@
 .cards {
-  background: black;
+  background: #328399;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
+.bullets {
+  display: flex;
+  justify-content: space-between;
+}
 .card {
-  background: #f3fce8;
+  background: #e6d94c;
   width: 20%;
   border-radius: 12px;
   padding: 2%;
@@ -16,7 +20,7 @@
 .desc {
   border: 1px black solid;
   border-radius: 8px;
-  padding: 2px;
+  padding: 4px;
 }
 img {
   float: left;
@@ -30,4 +34,7 @@ li:before {
   content: '🍺';
   margin-left: -20px;
   margin-right: 10px;
+}
+h4 {
+  text-align: center;
 }
