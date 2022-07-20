@@ -1,5 +1,13 @@
+h1,
+h2,
+h3,
+h4,
+p,
+li {
+  color: #555;
+}
 .cards {
-  background: #328399;
+  background: #d1e1e3;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -8,14 +16,16 @@
   display: flex;
   justify-content: space-between;
 }
+
 .card {
-  background: #e6d94c;
+  background: #e6c163;
   width: 20%;
   border-radius: 12px;
   padding: 2%;
   margin: 2%;
   overflow-y: scroll;
   height: 450px;
+  border: 1px solid #555;
 }
 .desc {
   border: 1px black solid;
@@ -37,4 +47,21 @@ li:before {
 }
 h4 {
   text-align: center;
+}
+
+.nav {
+  font-size: 30px;
+  background-color: #d1e1e3;
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+.nav-links {
+  display: flex;
+  flex-basis: 80%;
+  justify-content: space-around;
+  margin: 40px;
+}
+.nav-links > li {
+  margin: 0 20px 0 20px;
 }

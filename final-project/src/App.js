@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import BeerCard from './components/BeerCard'
-
+import NavBar from './components/NavBar'
 import './App.css'
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
   useEffect(() => {
     const getBeers = async () => {
       const response = await axios.get(
-        `https://api.punkapi.com/v2/beers?per_page=80`
+        `https://api.punkapi.com/v2/beers?per_page=30`
       )
       setBeers(response.data)
       console.log(response)
@@ -19,9 +19,11 @@ function App() {
 
   return (
     <div>
+      <NavBar beers={beers} />
+
       <div className="cards">
         {beers.map((beer) => (
-          <BeerCard beer={beer} key={beer.id}></BeerCard>
+          <BeerCard beer={beer} key={beer.id} />
         ))}
       </div>
     </div>

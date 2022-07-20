@@ -24,7 +24,7 @@ const BeerCard = (props) => {
           </div>
           </div>
           <h4>Yeast</h4><ul><li>{props.beer.ingredients.yeast}</li></ul>
-          {props.children}
+
         </div>
 
   )}
