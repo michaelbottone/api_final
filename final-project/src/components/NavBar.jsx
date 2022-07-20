@@ -5,7 +5,7 @@ const NavBar = (props) => {
 return(
   <div className="nav">
   {
-  props.beers.map((beer) => (
+  // props.beers.map((beer) => (
     <div>
     <div>
     <ul className="nav-links">
@@ -15,10 +15,11 @@ return(
     </ul>
   </div>
   <div>
-  <img src={`${beer.image_url}`} height="120px" alt="beer-pic" />
+  {/* <img src={`${beer.image_url}`} height="120px" alt="beer-pic" /> */}
   </div>
   </div>
-  ))}
+  // ))}
+}
   </div>
 )
 }
