@@ -2,17 +2,25 @@
 const BeerCard = (props) => {
 
   return (
-  <div>
-    {
-      props.beers.map((beer) => (
-        <div key={beer.name} className="card">
-          <img src={`${beer.image_url}`} width="50px" alt="poster" />
-          <h3>{beer.name}</h3>
-          {/* <button>View Movie</button> */}
+  
+        <div className="card">
+          <img src={`${props.beer.image_url}`} height="120px" alt="beer-pic" />
+          <h1>{props.beer.name}</h1>
+          <h2>{props.beer.tagline}</h2>
+          <h3>ABV: {props.beer.abv}</h3>
+          <p className="desc">{props.beer.description}</p>
+          <h4>Hops:</h4>
+          <ul>{props.beer.ingredients.hops.map((hop) => (
+          <li>{hop.name}</li>
+          ))}</ul>
+          <h4>Malts:</h4>
+          <ul>{props.beer.ingredients.malt.map((malt) => (
+          <li>{malt.name}</li>
+          ))}</ul>
+          <h4>Yeast:</h4><ul><li>{props.beer.ingredients.yeast}</li></ul>
+
         </div>
-      ))
-    }
-    </div>
+
   )}
 
 export default BeerCard
