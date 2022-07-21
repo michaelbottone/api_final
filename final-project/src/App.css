@@ -7,7 +7,7 @@ li {
   color: #555;
 }
 .cards {
-  background: #d1e1e3;
+  background: rgb(203, 182, 203);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -50,7 +50,7 @@ h4 {
 
 .nav {
   font-size: 30px;
-  background-color: #d1e1e3;
+  background-color: rgb(178, 136, 178);
   padding-top: 30px;
   display: flex;
   justify-content: space-around;
@@ -83,12 +83,13 @@ h4 {
   transform-style: preserve-3d;
 }
 
-.flip-card:hover .flip-card-inner {
+/* .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
-}
+} */
 
 .flip-card-front,
 .flip-card-back {
+  padding: 4px;
   position: absolute;
   width: 100%;
   height: 100%;

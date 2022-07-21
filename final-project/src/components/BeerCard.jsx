@@ -8,6 +8,9 @@ const BeerCard = (props) => {
       return newValue
   }else{return value}
   }
+
+    
+  }
   return (
   
     <div className="flip-card card">
@@ -19,6 +22,7 @@ const BeerCard = (props) => {
           <h2>{props.beer.tagline}</h2>
           <h3>ABV: {props.beer.abv}</h3>
           <p className="desc"><em>{truncate(props.beer.description)}</em></p>
+          <button onClick={() => (document.querySelector('.desc').innerText = props.beer.description)}>read more</button>
           </div>
       </div>
       <div className="flip-card-back">

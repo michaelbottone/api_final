@@ -12,7 +12,7 @@ function App() {
         `https://api.punkapi.com/v2/beers?per_page=30`
       )
       setBeers(response.data)
-      console.log(response)
+      console.log(response.data)
     }
     getBeers()
   }, [])
