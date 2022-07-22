@@ -1,6 +1,7 @@
-
+import { useState } from 'react' 
 const BeerCard = (props) => {
-
+  const [isShowing, setIsShowing] = useState(false)
+  const [frontCard, setFrontCard] = useState(true)
   const truncate = (value) => {
     if(value.length > 200){
       value = value.substring(0, 220)
@@ -8,9 +9,22 @@ const BeerCard = (props) => {
       return newValue
   }else{return value}
   }
-
+const showDesc = () => {
+  if(!isShowing){
+  setIsShowing(true)
+  }else{
+    setIsShowing(false)
+  }
+}
+const flipCard = () => {
+  if(!frontCard){
+  setFrontCard(true)
+  }else{
+    setFrontCard(false)
     
   }
+}
+  
   return (
   
     <div className="flip-card card">
@@ -21,8 +35,13 @@ const BeerCard = (props) => {
       <div className = "front-text">
           <h2>{props.beer.tagline}</h2>
           <h3>ABV: {props.beer.abv}</h3>
-          <p className="desc"><em>{truncate(props.beer.description)}</em></p>
-          <button onClick={() => (document.querySelector('.desc').innerText = props.beer.description)}>read more</button>
+          {isShowing ?  <p className="desc"><em>{props.beer.description}</em></p> : <p className="desc"><em>{truncate(props.beer.description)}{props.beer.description.length > 220 ? <a href="#" onClick={showDesc}>{isShowing ? "hide" : "read more"}</a> : <p></p>}</em></p>}
+          {frontCard ? <button onClick={flipCard}>Show Recipe</button> : <button onClick={flipCard}>Show Info</button>}
+
+          
+
+
+
           </div>
       </div>
       <div className="flip-card-back">

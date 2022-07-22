@@ -6,13 +6,13 @@ import './App.css'
 
 function App() {
   const [beers, setBeers] = useState([])
+
   useEffect(() => {
     const getBeers = async () => {
       const response = await axios.get(
         `https://api.punkapi.com/v2/beers?per_page=30`
       )
       setBeers(response.data)
-      console.log(response.data)
     }
     getBeers()
   }, [])
