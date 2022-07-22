@@ -114,3 +114,8 @@ h4 {
   flex-direction: column;
   justify-content: space-around;
 }
+
+button {
+  border-radius: 8px;
+  background-color: lightskyblue;
+}

@@ -24,27 +24,20 @@ const flipCard = () => {
     
   }
 }
+
   
   return (
-  
+
     <div className="flip-card card">
     <div className="flip-card-inner">
-      <div className="flip-card-front">
+      {frontCard ?  <div className="flip-card-front">
       <img src={`${props.beer.image_url}`} height="120px" alt="beer-pic" />
       <h1>{props.beer.name}</h1>
       <div className = "front-text">
           <h2>{props.beer.tagline}</h2>
           <h3>ABV: {props.beer.abv}</h3>
-          {isShowing ?  <p className="desc"><em>{props.beer.description}</em></p> : <p className="desc"><em>{truncate(props.beer.description)}{props.beer.description.length > 220 ? <a href="#" onClick={showDesc}>{isShowing ? "hide" : "read more"}</a> : <p></p>}</em></p>}
-          {frontCard ? <button onClick={flipCard}>Show Recipe</button> : <button onClick={flipCard}>Show Info</button>}
-
-          
-
-
-
-          </div>
-      </div>
-      <div className="flip-card-back">
+          {isShowing ?  <p className="desc"><em>{props.beer.description}</em></p> : <p className="desc"><em>{truncate(props.beer.description)}{props.beer.description.length > 220 ? <button onClick={showDesc}>{isShowing ? "hide" : "read more"}</button> : <></>}</em></p>}{frontCard ? <button onClick={flipCard}>Show Recipe</button> : <button onClick={flipCard}>Show Info</button>}</div>
+      </div> : <div className="flip-card card flip-card-inner flip-card-front">
       <div className="bullets">
           <div className="hops">
           <h4>Hops</h4>
@@ -60,7 +53,9 @@ const flipCard = () => {
           </div>
           </div>
           <h4>Yeast</h4><ul><li className="yeastlist">{props.beer.ingredients.yeast}</li></ul>
-      </div>
+          {frontCard ? <button onClick={flipCard}>Show Recipe</button> : <button onClick={flipCard}>Show Info</button>}
+      </div>}
+  
     </div>
   </div>
   
