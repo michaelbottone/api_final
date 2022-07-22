@@ -36,7 +36,7 @@ const flipCard = () => {
       <div className = "front-text">
           <h2>{props.beer.tagline}</h2>
           <h3>ABV: {props.beer.abv}</h3>
-          {isShowing ?  <p className="desc"><em>{props.beer.description}</em></p> : <p className="desc"><em>{truncate(props.beer.description)}{props.beer.description.length > 220 ? <button onClick={showDesc}>{isShowing ? "hide" : "read more"}</button> : <></>}</em></p>}{frontCard ? <button onClick={flipCard}>Show Recipe</button> : <button onClick={flipCard}>Show Info</button>}</div>
+          {isShowing ?  <p className="desc"><em>{props.beer.description}</em></p> : <p className="desc"><em>{truncate(props.beer.description)}{props.beer.description.length > 220 ? <button onClick={showDesc}>{isShowing ? "hide" : "read more"}</button> : <></>}</em></p>}{frontCard ? <button onClick={flipCard}>Show Ingredients</button> : <button onClick={flipCard}>Show Info</button>}</div>
       </div> : <div className="flip-card card flip-card-inner flip-card-front">
       <div className="bullets">
           <div className="hops">
@@ -53,7 +53,7 @@ const flipCard = () => {
           </div>
           </div>
           <h4>Yeast</h4><ul><li className="yeastlist">{props.beer.ingredients.yeast}</li></ul>
-          {frontCard ? <button onClick={flipCard}>Show Recipe</button> : <button onClick={flipCard}>Show Info</button>}
+          {frontCard ? <button onClick={flipCard}>Show Ingredients</button> : <button onClick={flipCard}>Show Info</button>}
       </div>}
   
     </div>
